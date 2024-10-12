@@ -5,11 +5,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-// interface for CRUD operations for the animal model
+
+// CRUD interface
 @Repository
 public interface AnimalRepository extends JpaRepository<Animal, Integer> {
-// method to find all animal records that match species
-    List<Animal> findBySpecies(String species);
-// method to find animal records where name contains a given string
-    List<Animal> findByNameContaining(String name);
+
+    // find all animal records that match species
+    List<Animal> findBySpeciesIgnoreCase(String species);
+
+    // find animal records where name contains a given string
+    List<Animal> findByNameContainingIgnoreCase(String name);
 }

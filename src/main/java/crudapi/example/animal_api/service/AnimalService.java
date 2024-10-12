@@ -50,13 +50,13 @@ public class AnimalService {
         return false;
     }
 
-    // gets animals by species
+    // gets animals by species (case-insensitive)
     public List<Animal> getAnimalsBySpecies(String species) {
-        return animalRepository.findBySpecies(species);
+        return animalRepository.findBySpeciesIgnoreCase(species);
     }
 
-    // gets animals whose name contains a string
+    // gets animals whose name contains a string (case-insensitive)
     public List<Animal> searchAnimalsByName(String name) {
-        return animalRepository.findByNameContaining(name);
+        return animalRepository.findByNameContainingIgnoreCase(name);
     }
 }
