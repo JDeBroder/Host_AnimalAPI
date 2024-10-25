@@ -14,10 +14,12 @@ public class AnimalService {
     @Autowired
     private AnimalRepository animalRepository;
 
-    // gets all animals
     public List<Animal> getAllAnimals() {
-        return animalRepository.findAll();
+        List<Animal> animals = animalRepository.findAll();
+        System.out.println("Number of animals found: " + animals.size());
+        return animals;
     }
+
 
     // gets animal by ID
     public Optional<Animal> getAnimalById(int id) {
